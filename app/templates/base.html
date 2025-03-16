@@ -8,12 +8,13 @@
         <title>Welcome to Microblog</title>
         {% endif %}
     </head>
-    <body style="text-align:center">
+    <body>
         <div> Microblog: 
-            <a href={{url_for("index")}} style="margin:20px;"><b>Home</b></a>
+            <a href={{url_for("index")}} ><b>Home</b></a>
             {% if current_user.is_anonymous %}
             <a href={{url_for("login")}}><b>Login</b></a>
             {% else %}
+            <a href={{url_for("user",username = current_user.username)}} style="margin:20px"><b>Profile</b></a>
             <a href={{url_for("logout")}}><b>Logout</b></a>
             {% endif %}
         </div>

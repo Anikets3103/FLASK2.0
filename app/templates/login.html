@@ -2,7 +2,7 @@
 <h1>Sign In</h1>
 <form action="" method="post" novalidate>
   {{ form.hidden_tag() }}
-
+  <p>New User? <a href="{{ url_for('register') }}">Click to Register!</a></p>
   <p>
     {{ form.username.label }}<br />
     {{ form.username(size=32) }}<br />
@@ -22,16 +22,5 @@
   <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
 
   <p>{{ form.submit() }}</p>
-
-  <button
-    style="
-      background-color: navy;
-      color: white;
-      font-size: 1.5rem;
-      border-radius: 8px;
-    "
-  >
-    click me!
-  </button>
 </form>
 {%endblock%}
